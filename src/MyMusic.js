@@ -1,4 +1,5 @@
 import React from 'react';
+import song from './assets/images/Senorita.webp';
 class MyMusic extends React.Component{
     
     constructor()
@@ -37,9 +38,7 @@ class MyMusic extends React.Component{
     }
     componentWillUnmount()
     {
-        this.setState({
-            isMounted:false
-        });
+        this.state.isMounted = false;
     }
 
     render(){
@@ -56,11 +55,11 @@ class MyMusic extends React.Component{
 
                 <div style={styles.info}>
                     
-                    <img style={styles.image} src="../OnMyWay.jpg" alt=""></img>
+                    <img style={styles.image} src={song} alt=""></img>
                     <div style={styles.subInfo}>
                         
                         <h4 style={{marginBottom:'0.5rem'}}>Senorita</h4>
-                        <p style={{marginBottom:'0'}}>Alan Walker</p>
+                        <p style={{marginBottom:'0'}}>Camilla Cobello</p>
                         <p>Shawn Mendes</p>
                     
                     </div>

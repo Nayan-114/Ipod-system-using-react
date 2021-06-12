@@ -235,7 +235,7 @@ class Ipod extends React.Component
                     <div style = {styles.middleButtons}>
                             
                             <i style = {styles.image} className="fas fa-fast-backward"></i>
-                            <div onClick={this.changePage} style={{backgroundImage: 'linear-gradient(45deg, #8c8181, transparent)' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
+                            <div onClick={this.changePage} style={{backgroundImage: 'linear-gradient(45deg, rgb(194 226 242), transparent)' , width : '5rem' , height : '5rem' , borderRadius : '50%'}}></div>
                             <i style = {styles.image} className="fas fa-fast-forward"></i>
 
                     </div>
@@ -256,7 +256,7 @@ const styles = {
     ipodContainer : {
         height : '33rem',
         width : '20rem',
-        backgroundImage: 'radial-gradient(#adb1b5, #4d4f50)',
+        backgroundImage: 'radial-gradient(rgb(255 216 222), rgb(63 103 185))',//rgb(255 216 222), rgb(63 103 185)
         margin : '4rem auto',
         display : 'flex',
         flexDirection : 'row',
