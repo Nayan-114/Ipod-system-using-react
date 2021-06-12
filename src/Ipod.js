@@ -142,22 +142,73 @@ class Ipod extends React.Component
     }
     changePageToHomeScreen = () =>
     {
-        console.log('Home screen button');
+        if(this.state.activeItem === 'MyMusic' || this.state.activeItem === 'Artists')
+        {
+            this.setState({
+                activeItem:'Music',
+                activePage:'Home'
+            })
+        }
+        else
+        {
+            this.setState({
+                activeItem:this.state.activeItem,
+                activePage:'Home'
+            })
+        }
     }
     changePage = () =>
     {
-        console.log('Change Page');
+        if(this.state.activeItem === 'Music')
+        {
+            this.setState({
+                activeItem : 'MyMusic', //for understanding: it is used to highlight after using the changePageToHomeScreen button
+                                        //Item now active same for the others too
+                activePage : this.state.activeItem
+            });
+        }
+        else if(this.state.activeItem === 'NowPlaying')
+        {
+            this.setState({
+                activeItem : 'NowPlaying',
+                activePage : 'MyMusic'
+            });
+        }
+        else
+        {
+            this.setState({
+                activeItem : this.state.activeItem, //Try writing: 'NowPlaying' you will understand the reason for this state
+                activePage : this.state.activeItem
+            });
+        }
     }
     toggle = () =>
     {
-        console.log('Toggle button');
+        if(this.state.activePage === 'MyMusic')
+        {
+            if(this.state.play === true)
+            {
+                this.state.audio.pause();
+                this.setState({
+                    play:false
+                })
+            }
+            else
+            {
+                this.state.audio.play();
+                this.setState({
+                    play:true
+                })
+            }
+            console.log("Toggled");
+        }
     }
     componentDidMount() //Adding a new state (audio) here
     {
-        let audio = document.getElementsByClassName("audio-element");
+        let audio = document.getElementsByClassName("audio-element")[0];
         console.log(audio);
         this.setState({
-            audio:audio
+            audio : audio,
         })
         console.log(this.state);
     }
